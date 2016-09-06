@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/az/grp/dao/BaseDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/az/grp/dao/CacheDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/az/grp/dao/ConfigDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/az/grp/dao/impl/BaseDAOImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/az/grp/dao/impl/CacheDAOImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/az/grp/dao/impl/ConfigDAOImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/az/grp/model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/az/grp/util/Constants.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/az/grp/util/ErrorMessages.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/az/grp/util/JSONUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-theme.min.css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.min.css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/js/ZeroClipboard.js" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/js/jquery-1.12.3.js" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/js/jquery.min.js" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/blog-image/adnsu.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/blog-image/bloglogo.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/blog-image/bloglogoo.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/blog-image/grplogo.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/check-student.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/check.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/images (1).jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/images (2).jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/images-x.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/images.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/image/images.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/wordFile/serbest1_Ulker.docx" charset="windows-1252" />
+  </component>
+</project>
