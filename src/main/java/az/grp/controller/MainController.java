@@ -377,7 +377,7 @@ public class MainController {
     @ResponseBody
     public String Teacher_share_student_file(@RequestParam String text1,
                                              @RequestParam String text2, @RequestParam("file") MultipartFile file) {
-
+        //aaaa
         String[] val = text2.split(",");
         Teacher_share teacher_share = new Teacher_share();
         Student student = new Student();
@@ -425,7 +425,7 @@ public class MainController {
                     }
                 }
                 if (text2.equals("") || text1.equals("")) {
-                    return "errorr";
+                    return "errorr ";
                 }
 
             }
