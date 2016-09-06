@@ -339,7 +339,8 @@ public class MainController {
     }
 
     // Teacher share students
-   int  globalTeacher_id;
+    int globalTeacher_id;
+
     @RequestMapping("/teacher-share-page/{teacher_id}")
     public String WelcomeTeacher_SharePage(@PathVariable int teacher_id, ModelMap map) {
 
@@ -363,8 +364,8 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/teacher-share-page/find-students",method = RequestMethod.POST)
-    public String as(@RequestParam int group_id,HttpServletRequest request) {
+    @RequestMapping(value = "/teacher-share-page/find-students", method = RequestMethod.POST)
+    public String as(@RequestParam int group_id, HttpServletRequest request) {
 
         List<Student> students = baseDAO.find(Student.class, "groups.id", group_id);
         request.setAttribute("students", students);
@@ -377,8 +378,12 @@ public class MainController {
     public String Teacher_share_student_file(@RequestParam String text1,
                                              @RequestParam String text2, @RequestParam("file") MultipartFile file) {
 
-        if (!file.isEmpty()) {
-            try {
+        String[] val = text2.split(",");
+        Teacher_share teacher_share = new Teacher_share();
+        Student student = new Student();
+        Teacher teacher = new Teacher();
+        try {
+            if (!file.isEmpty()) {
                 byte[] bytes = file.getBytes();
 
                 // Creating the directory to store file
@@ -395,14 +400,9 @@ public class MainController {
                 stream.write(bytes);
                 stream.close();
 
-                String[] val = text2.split(",");
-                Teacher_share teacher_share = new Teacher_share();
-                Student student = new Student();
-                Teacher teacher = new Teacher();
                 teacher.setId(globalTeacher_id);
-                for(int i=0;i<val.length;i++){
+                for (int i = 0; i < val.length; i++) {
                     student.setId(Integer.parseInt(val[i]));
-
                     teacher_share.setFilePath("C:\\apache-tomcat-7.0.63\\teacher_shareFile\\" + file.getOriginalFilename());
                     teacher_share.setDescription(text1);
                     teacher_share.setStudents(student);
@@ -411,17 +411,30 @@ public class MainController {
                     baseDAO.save(teacher_share);
                 }
 
+            } else {
 
-                return "You successfully share file=";
-            } catch (Exception e) {
-                return "You failed to share file  "+ e.getMessage();
+                if (!text2.equals("") && !text1.equals("")) {
+                    teacher.setId(globalTeacher_id);
+                    for (int i = 0; i < val.length; i++) {
+                        student.setId(Integer.parseInt(val[i]));
+                        teacher_share.setDescription(text1);
+                        teacher_share.setStudents(student);
+                        teacher_share.setTeachers(teacher);
+                        teacher_share.setStatus(1);
+                        baseDAO.save(teacher_share);
+                    }
+                }
+                if (text2.equals("") || text1.equals("")) {
+                    return "errorr";
+                }
+
             }
-        } else {
-            return "You failed to share file " + file.getOriginalFilename()
-                    + " because the file was empty.";
+            return "share is successfully";
+        } catch (Exception e) {
+            return "share is failed  " + e.getMessage();
         }
-    }
 
+    }
 
 
 }
