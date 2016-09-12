@@ -8,9 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6319643-c416-4259-a6b4-245e99cb1310" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/az/grp/controller/CourseController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/az/grp/model/dao/StudentsCourse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/showstudentcours.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/WEB-INF/classes/az/grp/controller/BlogController.class" afterPath="$PROJECT_DIR$/target/GRP/WEB-INF/classes/az/grp/controller/BlogController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/az/grp/controller/BlogController.class" afterPath="$PROJECT_DIR$/target/classes/az/grp/controller/BlogController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP.war" afterPath="$PROJECT_DIR$/target/GRP.war" />
@@ -18,18 +15,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/az/grp/controller/MainController.class" afterPath="$PROJECT_DIR$/target/classes/az/grp/controller/MainController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/WEB-INF/classes/az/grp/model/dao/Teacher_share.class" afterPath="$PROJECT_DIR$/target/GRP/WEB-INF/classes/az/grp/model/dao/Teacher_share.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/az/grp/model/dao/Teacher_share.class" afterPath="$PROJECT_DIR$/target/classes/az/grp/model/dao/Teacher_share.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/az/grp/controller/BlogController.java" afterPath="$PROJECT_DIR$/src/main/java/az/grp/controller/BlogController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/az/grp/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/az/grp/controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/az/grp/model/dao/Teacher_share.java" afterPath="$PROJECT_DIR$/src/main/java/az/grp/model/dao/Teacher_share.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/byIdquestion.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/byIdquestion.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/byIdquestion.jsp" afterPath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/byIdquestion.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/hibernate.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/hibernate.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/WEB-INF/config/hibernate.xml" afterPath="$PROJECT_DIR$/target/GRP/WEB-INF/config/hibernate.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/resources/js/main.js" afterPath="$PROJECT_DIR$/target/GRP/resources/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/teacher_share_students.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/teacher_share_students.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/teacher_share_students.jsp" afterPath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/teacher_share_students.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/welcome_blog.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/welcome_blog.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/welcome_blog.jsp" afterPath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/welcome_blog.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -984,7 +973,7 @@
       <workItem from="1473244902550" duration="7699000" />
       <workItem from="1473437996288" duration="5805000" />
       <workItem from="1473574585288" duration="4915000" />
-      <workItem from="1473664084869" duration="12229000" />
+      <workItem from="1473664084869" duration="12375000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1473174959638</created>
@@ -998,11 +987,17 @@
       <option name="project" value="LOCAL" />
       <updated>1473177710853</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Student going course">
+      <created>1473703045187</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1473703045187</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="726699000" />
+    <option name="totallyTimeSpent" value="726845000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1065,7 +1060,8 @@
     <MESSAGE value="semed" />
     <MESSAGE value="second commit" />
     <MESSAGE value="tree commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="tree commit" />
+    <MESSAGE value="Student going course" />
+    <option name="LAST_COMMIT_MESSAGE" value="Student going course" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1266,6 +1262,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1280,6 +1277,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="68" selection-start-line="54" selection-start-column="68" selection-end-line="54" selection-end-column="96" />
+          <folding />
         </state>
       </provider>
     </entry>
