@@ -67,8 +67,7 @@ public class BlogController {
 
 
     long question_id;
-
-    @RequestMapping(value = "/questionby-id/{questionid}")
+    @RequestMapping(value = "/question/id={questionid}")
     public String QuestionById(@PathVariable long questionid, ModelMap map) {
 
 
@@ -91,7 +90,6 @@ public class BlogController {
     @ResponseBody
     public String Add_Answer(@Param BlogAnswer ba) {
 
-
         BlogAnswer blog = new BlogAnswer();
         BlogQuestion blogQuestion = new BlogQuestion();
         blogQuestion.setId(question_id);
@@ -110,7 +108,7 @@ public class BlogController {
             return "Add answer is failed";
         }
 
-        return "successfuly";
+        return "successfully";
     }
 
 }

@@ -24,6 +24,12 @@
 
         $(function () {
 
+
+            let url = new URL('http://localhost:8084/blog/question?id=1'); // window.location
+            let params = new URLSearchParams(url.search.slice(1));
+            alert(params.get('id'));
+
+
             $("#add_answer").click(function () {
 
                 var userName = $("#userName_id").val();
@@ -61,9 +67,11 @@
 
     <div class="row generic-container">
 
-        <p style="color: #00AB66;font-style: italic;font-weight: bold;">Hörmətli istifadəçi əgər verdiyiniz sualin cavabı sizə aydın deyilsə və ya
-        sualla bağlı hər hansı əlavəniz varsa,səyfənin aşağı hissesində müvafiq yerdən,
-           yeni sual əlavə edən zaman istifadə etdiyiniz emaili istifadə etmək şərti ilə əlavənizi yazıb bizə göndərə bilərsiniz.</p>
+        <p style="color: #00AB66;font-style: italic;font-weight: bold;">Hörmətli istifadəçi əgər verdiyiniz sualin
+            cavabı sizə aydın deyilsə və ya
+            sualla bağlı hər hansı əlavəniz varsa,səyfənin aşağı hissesində müvafiq yerdən,
+            yeni sual əlavə edən zaman istifadə etdiyiniz emaili istifadə etmək şərti ilə əlavənizi yazıb bizə göndərə
+            bilərsiniz.</p>
 
     </div>
 

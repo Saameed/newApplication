@@ -36,9 +36,8 @@
                 }
                 <%}%>
                 $("#students_idtextarea").val(arr);
-               alert( $("#students_idtextarea").val())
-            });
 
+            });
 
             $('#selectAll').click(function () {
                 <%  for(int i=0;i<students.size();i++) { %>

@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "teacher_share")
-public class Teacher_share {
+public class Teacher_share implements IEntity {
 
     private static final long serialVersionUID = 1L;
     @Id

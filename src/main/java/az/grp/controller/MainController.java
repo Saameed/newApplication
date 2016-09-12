@@ -29,19 +29,22 @@ public class MainController {
 
 
     @RequestMapping(method = RequestMethod.GET)
-    public String printWelcome(ModelMap map) {
+        public String printWelcome(ModelMap map) {
 
-        List<Student> students = baseDAO.find(Student.class, "id", 1);
-        int group_id = 0;
-        for (Student st : students) {
-            group_id = st.getGroups().getId();
-        }
-        Map<String, Object> params = new HashMap<String, Object>();
-        params.put("groups.id", group_id);
-        List<Lesson> lessons = baseDAO.find(Lesson.class, params);
-        map.put("lessons", lessons);
+            List<Student> students = baseDAO.find(Student.class, "id", 1);
+            int group_id = 0;
+            for (Student st : students) {
+                group_id = st.getGroups().getId();
+            }
+            Map<String, Object> params = new HashMap<String, Object>();
+            params.put("groups.id", group_id);
+            List<Lesson> lessons = baseDAO.find(Lesson.class, params);
+            map.put("lessons", lessons);
 
-        return "summary";
+            List<Teacher_share> shareList = baseDAO.find(Teacher_share.class, "students.id", 1);
+            map.put("share",shareList);
+
+            return "summary";
     }
 
     @RequestMapping(value = "/students-summary-lab", method = RequestMethod.POST)
@@ -377,7 +380,7 @@ public class MainController {
     @ResponseBody
     public String Teacher_share_student_file(@RequestParam String text1,
                                              @RequestParam String text2, @RequestParam("file") MultipartFile file) {
-        //aaaa
+
         String[] val = text2.split(",");
         Teacher_share teacher_share = new Teacher_share();
         Student student = new Student();
@@ -393,10 +396,8 @@ public class MainController {
                     dir.mkdirs();
 
                 // Create the file on server
-                File serverFile = new File(dir.getAbsolutePath()
-                        + File.separator + file.getOriginalFilename());
-                BufferedOutputStream stream = new BufferedOutputStream(
-                        new FileOutputStream(serverFile));
+                File serverFile = new File(dir.getAbsolutePath() + File.separator + file.getOriginalFilename());
+                BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
                 stream.write(bytes);
                 stream.close();
 
@@ -410,7 +411,6 @@ public class MainController {
                     teacher_share.setStatus(1);
                     baseDAO.save(teacher_share);
                 }
-
             } else {
 
                 if (!text2.equals("") && !text1.equals("")) {
@@ -425,9 +425,8 @@ public class MainController {
                     }
                 }
                 if (text2.equals("") || text1.equals("")) {
-                    return "errorr ";
+                    return "error";
                 }
-
             }
             return "share is successfully";
         } catch (Exception e) {

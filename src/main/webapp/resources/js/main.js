@@ -631,7 +631,7 @@ function showStudentByGroupId(groupid, lessonid) {
         dataType: "json",
         type: "POST",
         success: function (data1) {
-            //alert(data1)
+            alert(data1)
             dey = data1;
         }
     });

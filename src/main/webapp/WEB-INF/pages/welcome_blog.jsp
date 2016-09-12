@@ -111,7 +111,7 @@
 
             <tr id="id<%=i%>">
 
-                <td style="color: #005f81"><a href="/blog/questionby-id/<%=bq.getId()%>"
+                <td style="color: #005f81"><a href="/blog/question/id=<%=bq.getId()%>"
                                               style="color: #005f81"><%=bq.getTitle()%>
                 </a></td>
                 <td>Tarix: <%=bq.getCreated()%>
