@@ -621,17 +621,16 @@ function updateLaboratoryDoc_Path(id) {
 
 
 // Teacher Profile
-function showStudentByGroupId(groupid, lessonid) {
+function showStudentByGroupId(groupid, lessonid, sub_lesson_typeId) {
 
-    var dey;
-    // birinci ajax status_id ye gore telebeleri qaytarir
+    var dey;  // birinci ajax status_id ye gore telebeleri qaytarir
     $.ajax({
         url: "equals-students",
-        data: "groupid=" + groupid + "&lessonid=" + lessonid,
+        data: "groupid=" + groupid + "&lessonid=" + lessonid + "&sub_lesson_typeId=" + sub_lesson_typeId,
         dataType: "json",
         type: "POST",
         success: function (data1) {
-            alert(data1)
+            //alert(data1)
             dey = data1;
         }
     });
@@ -673,7 +672,7 @@ function showStudentByGroupId(groupid, lessonid) {
                         "mData": null,
                         "bSortable": false,
                         "render": function (data) {
-                            return '<a href="/show-summaryORlab-byteacher/' + data.id + '">' + '<input type="button" value="Neticeye bax" class="btn btn-default">' + '</a>';
+                            return '<a href="/show-summaryORlab-byteacher/id=' + data.id + '&type=' + sub_lesson_typeId + '">' + '<input type="button" value="Neticeye bax" class="btn btn-default">' + '</a>';
                         },
                     },
                     {
@@ -681,7 +680,6 @@ function showStudentByGroupId(groupid, lessonid) {
                         "render": function (data) {
 
                             if (dey != "") {
-
                                 var s;
                                 for (s = 0; s < dey.length; s++) {
                                     return (data == dey[s] ) ? '<img src="../../resources/wordFile/image/check-student.png" style="width: 30px">' : '';
@@ -733,7 +731,7 @@ function showGroupBySub_Lesson_TypeId(teacher_id, sub_lesson_typeId) {
             var i, j;
             for (i = 0; i < returnData.length; i++) {
 
-                out += '<li  class = "page-item" value=""><a href="javascript:showStudentByGroupId(' + returnData[i].parentLesson.groups.id + " ," + returnData[i].parentLesson.id + ')" class="page-link">' +
+                out += '<li  class = "page-item" value=""><a href="javascript:showStudentByGroupId(' + returnData[i].parentLesson.groups.id + " ," + returnData[i].parentLesson.id + " , " + sub_lesson_typeId + ')" class="page-link">' +
                     returnData[i].parentLesson.name + " -- " + returnData[i].parentLesson.groups.name + '</a></li>';
 
                 for (j = 0; j < dey.length; j++) {
@@ -759,11 +757,11 @@ function showGroupBySub_Lesson_TypeId(teacher_id, sub_lesson_typeId) {
 }
 
 
-function TeacherSaveStudentSummaryOrLabStatus(summaryOrLabId, summaryStatusId) {
+function TeacherSaveStudentSummaryOrLabStatus(summaryOrLabId, summaryStatusId, sub_LessonType_id) {
 
     $.ajax({
         url: "/save_summary_or_lab_byteacher",
-        data: "summaryOrLabId=" + summaryOrLabId + "&summaryStatusId=" + summaryStatusId,
+        data: "summaryOrLabId=" + summaryOrLabId + "&summaryStatusId=" + summaryStatusId + "&sub_LessonType_id=" + sub_LessonType_id,
         dataType: "text",
         type: "POST",
         success: function (data) {

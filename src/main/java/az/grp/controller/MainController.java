@@ -29,22 +29,22 @@ public class MainController {
 
 
     @RequestMapping(method = RequestMethod.GET)
-        public String printWelcome(ModelMap map) {
+    public String printWelcome(ModelMap map) {
 
-            List<Student> students = baseDAO.find(Student.class, "id", 1);
-            int group_id = 0;
-            for (Student st : students) {
-                group_id = st.getGroups().getId();
-            }
-            Map<String, Object> params = new HashMap<String, Object>();
-            params.put("groups.id", group_id);
-            List<Lesson> lessons = baseDAO.find(Lesson.class, params);
-            map.put("lessons", lessons);
+        List<Student> students = baseDAO.find(Student.class, "id", 1);
+        int group_id = 0;
+        for (Student st : students) {
+            group_id = st.getGroups().getId();
+        }
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("groups.id", group_id);
+        List<Lesson> lessons = baseDAO.find(Lesson.class, params);
+        map.put("lessons", lessons);
 
-            List<Teacher_share> shareList = baseDAO.find(Teacher_share.class, "students.id", 1);
-            map.put("share",shareList);
+        List<Teacher_share> shareList = baseDAO.find(Teacher_share.class, "students.id", 1);
+        map.put("share", shareList);
 
-            return "summary";
+        return "summary";
     }
 
     @RequestMapping(value = "/students-summary-lab", method = RequestMethod.POST)
@@ -167,14 +167,14 @@ public class MainController {
     }
 
 
-    int globalSubLessonTypeId;
+    /*int globalSubLessonTypeId;*/
 
     @RequestMapping(value = "/getSubLessonByTypeId", method = RequestMethod.POST)
     @ResponseBody
     public String groupListBySub_Lesson_TypeId(@RequestParam(value = "id") int id,
                                                @RequestParam(value = "sub_lesson_typeId") int sub_lesson_typeId) {
 
-        globalSubLessonTypeId = sub_lesson_typeId;
+//        globalSubLessonTypeId = sub_lesson_typeId;
 
         Map<String, Object> params = new HashMap<>();
         params.put("teacher.id", id);
@@ -243,12 +243,13 @@ public class MainController {
     @RequestMapping(value = "/equals-students", method = RequestMethod.POST)
     @ResponseBody
     public String EqualsStudentbySumOrLabStatus_id(@RequestParam(value = "groupid") int groupid,
-                                                   @RequestParam(value = "lessonid") int lessonid, ModelMap map) {
+                                                   @RequestParam(value = "lessonid") int lessonid,
+                                                   @RequestParam(value = "sub_lesson_typeId") int sub_lesson_typeId, ModelMap map) {
 
         List<Integer> students_array = new ArrayList();
         Map<String, Object> params = new HashMap<>();
 
-        if (globalSubLessonTypeId == 1) {
+        if (sub_lesson_typeId == 1) {
 
             students_array.clear();
             params.put("summaryStatus.id", Long.parseLong("2"));
@@ -258,7 +259,8 @@ public class MainController {
             for (Summary sm : summaryList) {
                 students_array.add(sm.getStudents().getId());
             }
-        } else if (globalSubLessonTypeId == 2) {
+
+        } else if (sub_lesson_typeId == 2) {
 
             students_array.clear();
             params.put("laboratoryStatus.id", Long.parseLong("2"));
@@ -281,19 +283,19 @@ public class MainController {
                 }
             }
         }
-
         return JSONUtil.convertObjectToJSON(students_array);
     }
 
 
-    @RequestMapping(value = "/show-summaryORlab-byteacher/{studentid}")
-    public String TeachershowSummary(@PathVariable int studentid, ModelMap map, HttpServletRequest request) {
+    @RequestMapping(value = "/show-summaryORlab-byteacher/id={studentid}&type={sub_lesson_type}")
+    public String TeachershowSummary(@PathVariable int studentid,@PathVariable int sub_lesson_type, ModelMap map,
+                                     HttpServletRequest request) {
 
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("lesson.id", globalLessonId);
         params.put("students.id", studentid);
 
-        if (globalSubLessonTypeId == 1) {
+        if (sub_lesson_type == 1) {
 
             List<Summary> summarys = baseDAO.find(Summary.class, params);
             Student student = baseDAO.findWithParams(Student.class, "id", studentid);
@@ -301,7 +303,7 @@ public class MainController {
             map.addAttribute("student", student);
             return "forTeacherProfileSummary";
         }
-        if (globalSubLessonTypeId == 2) {
+        if (sub_lesson_type == 2) {
 
             List<Laboratory> laboratories = baseDAO.find(Laboratory.class, params);
             Student student = baseDAO.findWithParams(Student.class, "id", studentid);
@@ -317,17 +319,18 @@ public class MainController {
     @RequestMapping(value = "/save_summary_or_lab_byteacher", method = RequestMethod.POST)
     @ResponseBody
     public String TeacherUpdateStudentSummaryOrLabStatus(@RequestParam(value = "summaryOrLabId") int summaryOrLabId,
-                                                         @RequestParam(value = "summaryStatusId") int summaryStatusId) {
+                                                         @RequestParam(value = "summaryStatusId") int summaryStatusId,
+                                                         @RequestParam(value = "sub_LessonType_id") int sub_LessonType_id) {
 
         try {
-            if (globalSubLessonTypeId == 1) {   // mesgele - muhazire
+            if (sub_LessonType_id == 1) {   // mesgele - muhazire
                 Summary summary = baseDAO.findWithParams(Summary.class, "id", summaryOrLabId);
                 SummaryStatus st = new SummaryStatus();
                 st.setId((long) summaryStatusId);
                 summary.setSummaryStatus(st);
                 baseDAO.update(summary);
             }
-            if (globalSubLessonTypeId == 2) {  // laboratoriya
+            if (sub_LessonType_id == 2) {  // laboratoriya
                 Laboratory lab = baseDAO.findWithParams(Laboratory.class, "id", summaryOrLabId);
                 SummaryStatus st = new SummaryStatus();
                 st.setId((long) summaryStatusId);

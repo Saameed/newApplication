@@ -47,7 +47,7 @@ public class CourseController {
 
         List<StudentsCourse> coursList = baseDAO.find(StudentsCourse.class, null, null);
         map.put("course", coursList);
-        return "";
+        return "showstudentcours";
     }
 
 }

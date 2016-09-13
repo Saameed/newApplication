@@ -48,13 +48,13 @@
 
                 <% for(int i=0;i<summarys.size();i++) { %>
                 summaryId = $('#Tables-summary  #takesummaryId<%=i%>').text();
+                sub_LessonType_id = 1; // yeni mesgele oldugunu menimsedirem
 
                 if ($('#checkNo<%=i%>').prop('checked') == false && $('#checkOk<%=i%>').prop('checked') == false) {
                     <%if(!summarys.get(i).getDocPath().equalsIgnoreCase("") && summarys.get(i).getDocPath() != null){%>
                     summaryStatus = 2;    // summaryStatus_id ni 2 edirik
-                    TeacherSaveStudentSummaryOrLabStatus(summaryId, summaryStatus);
+                    TeacherSaveStudentSummaryOrLabStatus(summaryId, summaryStatus,sub_LessonType_id);
                     <%}%>
-
                 }
 
                 if ($('#checkNo<%=i%>').is(':checked') && $('#checkOk<%=i%>').is(':checked')) {
@@ -65,14 +65,14 @@
                 if ($('#checkOk<%=i%>').is(':checked')) {  //checkOk click olunanda bazaya qebul edilib kimi dusecey
                     <%if(!summarys.get(i).getDocPath().equalsIgnoreCase("") && summarys.get(i).getDocPath() != null){%>
                     summaryStatus = 3; // --> yeni qebul edilib
-                    TeacherSaveStudentSummaryOrLabStatus(summaryId, summaryStatus);
+                    TeacherSaveStudentSummaryOrLabStatus(summaryId, summaryStatus,sub_LessonType_id);
                     <%}%>
                 }
 
                 else if ($('#checkNo<%=i%>').is(':checked')) {  //checkNo eksine
                     <%if(!summarys.get(i).getDocPath().equalsIgnoreCase("") && summarys.get(i).getDocPath() != null){%>
                     summaryStatus = 4;  // --> yeni qebul edilmeyib
-                    TeacherSaveStudentSummaryOrLabStatus(summaryId, summaryStatus);
+                    TeacherSaveStudentSummaryOrLabStatus(summaryId, summaryStatus,sub_LessonType_id);
                     <%}%>
                 }
 

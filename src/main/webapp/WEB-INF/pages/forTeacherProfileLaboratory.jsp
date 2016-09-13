@@ -50,12 +50,13 @@
                 <% for(int i=0;i<lab.size();i++) { %>
 
                 labId = $('#Tables-laboratory  #takelabId<%=i%>').text();
+                sub_LessonType_id = 2;  // yeni laboratoriyadir
 
                 if ($('#checkNo<%=i%>').prop('checked') == false && $('#checkOk<%=i%>').prop('checked') == false) {
 
                     <%if(!lab.get(i).getDocPath().equalsIgnoreCase("") && lab.get(i).getDocPath() != null){%>
                     summaryStatus = 2;    // summaryStatus_id ni 2 edirik
-                    TeacherSaveStudentSummaryOrLabStatus(labId, summaryStatus);
+                    TeacherSaveStudentSummaryOrLabStatus(labId, summaryStatus,sub_LessonType_id);
                     <%}%>
 
                 }
@@ -64,18 +65,19 @@
                     $('#checkOk<%=i%>').prop('checked', false);
                 }
 
+
                 if ($('#checkOk<%=i%>').is(':checked')) {  //checkOk click olunanda bazaya qebul edilib kimi dusecey
 
                     <%if(!lab.get(i).getDocPath().equalsIgnoreCase("") && lab.get(i).getDocPath() != null){%>
                     summaryStatus = 3; // --> yeni qebul edilib
-                    TeacherSaveStudentSummaryOrLabStatus(labId, summaryStatus);
+                    TeacherSaveStudentSummaryOrLabStatus(labId, summaryStatus,sub_LessonType_id);
                     <%}%>
                 }
                 else if ($('#checkNo<%=i%>').is(':checked')) {  //checkNo eksine
 
                     <%if(!lab.get(i).getDocPath().equalsIgnoreCase("") && lab.get(i).getDocPath() != null){%>
                     summaryStatus = 4;  // --> yeni qebul edilmeyib
-                    TeacherSaveStudentSummaryOrLabStatus(labId, summaryStatus);
+                    TeacherSaveStudentSummaryOrLabStatus(labId, summaryStatus,sub_LessonType_id);
                     <%}%>
                 }
 
@@ -109,14 +111,10 @@
 
             <tbody>
             <tr>
-                <td><%=lb.getLabName() %>
-                </td>
+                <td><%=lb.getLabName() %></td>
                 <td>Laboratoriya N <%=lb.getNumber() %>
-                </td>
-                <td><%=lb.getDeadline() %>
-                </td>
-                <td style="display: none" id="takelabId<%=i%>"><%=lb.getId()%>
-                </td>
+                </td><td><%=lb.getDeadline() %></td>
+                <td style="display: none" id="takelabId<%=i%>"><%=lb.getId()%></td>
                 <td><input type="button" class="btn btn-default" value="open document"></td>
                 <td><label class="checkbox-inline" id="lbcheckOk<%=i%>"><input type="checkbox" id="checkOk<%=i%>">Qebul edirəm</label>
                     <label class="checkbox-inline" id="lbcheckNo<%=i%>"><input type="checkbox" id="checkNo<%=i%>">Qəbul etmirəm</label>

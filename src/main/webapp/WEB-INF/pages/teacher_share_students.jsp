@@ -36,13 +36,21 @@
                 }
                 <%}%>
                 $("#students_idtextarea").val(arr);
-
             });
 
-            $('#selectAll').click(function () {
-                <%  for(int i=0;i<students.size();i++) { %>
-                $('#studentCekId<%=i%>').prop('checked', true);
-                <%}%>
+            $('#checkOk').on('click', function () {
+
+                if ($("#checkOk").is(':checked')) {
+                    <%  for(int i=0;i<students.size();i++) { %>
+                    $('#studentCekId<%=i%>').prop('checked', true);
+                    <%}%>
+                }
+                 else{
+                    <%  for(int i=0;i<students.size();i++) { %>
+                    $('#studentCekId<%=i%>').prop('checked', false);
+                    <%}%>
+                }
+
             });
 
             $("#dataTables-example").dataTable();
@@ -72,7 +80,8 @@
 
         <div class="col-md-4">
             <br><br>
-            <textarea class="form-control" rows="5" id="students_idtextarea" name="text2" style="display: none"></textarea>
+            <textarea class="form-control" rows="5" id="students_idtextarea" name="text2"
+                      style="display: none"></textarea>
             <input type="submit" class="btn btn-default" id="gonder" value="Gonder"
                    style="width: 100%">
         </div>
@@ -86,7 +95,9 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><input type="button" class="btn btn-default" id="selectAll" value="Hər birini işarələ"></td>
+            <td><%--<input type="button" class="btn btn-default" id="selectAll" value="Hər birini işarələ">--%>
+                <label class="checkbox-inline" id="lbcheckOk"><input type="checkbox" id="checkOk">Hamısını
+                    isarəleə</label></td>
         </tr>
         </thead>
         <% int i = 0;
