@@ -8,14 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6319643-c416-4259-a6b4-245e99cb1310" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP.war" afterPath="$PROJECT_DIR$/target/GRP.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/az/grp/controller/CourseController.java" afterPath="$PROJECT_DIR$/src/main/java/az/grp/controller/CourseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/az/grp/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/az/grp/controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forTeacherProfileLaboratory.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forTeacherProfileLaboratory.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forTeacherProfileSummary.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forTeacherProfileSummary.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/teacher_share_students.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/teacher_share_students.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/teacher_share_students.jsp" afterPath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/teacher_share_students.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/WEB-INF/classes/az/grp/controller/MainController.class" afterPath="$PROJECT_DIR$/target/GRP/WEB-INF/classes/az/grp/controller/MainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/az/grp/controller/MainController.class" afterPath="$PROJECT_DIR$/target/classes/az/grp/controller/MainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/forTeacherProfileLaboratory.jsp" afterPath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/forTeacherProfileLaboratory.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/forTeacherProfileSummary.jsp" afterPath="$PROJECT_DIR$/target/GRP/WEB-INF/pages/forTeacherProfileSummary.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/GRP/resources/js/main.js" afterPath="$PROJECT_DIR$/target/GRP/resources/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GRP.iws" />
@@ -935,7 +932,7 @@
       <workItem from="1473437996288" duration="5805000" />
       <workItem from="1473574585288" duration="4915000" />
       <workItem from="1473664084869" duration="15501000" />
-      <workItem from="1473748905843" duration="5430000" />
+      <workItem from="1473748905843" duration="5651000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1473174959638</created>
@@ -961,11 +958,17 @@
       <option name="project" value="LOCAL" />
       <updated>1473703100682</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="bezi duzelisler edmisem">
+      <created>1473755712796</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1473755712796</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="735401000" />
+    <option name="totallyTimeSpent" value="735622000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
